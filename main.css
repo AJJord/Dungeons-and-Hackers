@@ -1,0 +1,58 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css?family=Alegreya+SC');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+SC|Press+Start+2P');
+/*font-family: 'Alegreya SC', serif;*/
+/*endfonts*/
+
+body {
+  background-color: black;
+  color: green;
+  font-family: 'Press Start 2P', cursive;
+  width: 70%;
+  margin: 0 auto 0 auto;
+}
+
+header {
+  font-family: 'Alegreya SC', serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1:nth-child(1) {
+  margin-left: 20px;
+  text-shadow: 6px 6px #001E00;
+}
+
+h1:nth-child(2) {
+  margin-top: -90px;
+  color: darkgreen;
+  text-shadow: 6px 6px #001E00;
+}
+
+h1 span {
+  font-family: 'Press Start 2P', cursive;
+  font-size: normal;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+}
+
+li:before {
+  content: ">>";
+}
+
+li a {
+    text-decoration: none;
+    color: green;
+    padding: 7px;
+}
+
+li a:hover {
+    border: 5px solid green;
+    padding: 2px;
+}
