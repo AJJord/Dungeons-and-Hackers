@@ -1,7 +1,7 @@
 Hackerthon: {
 	Start: {
 		Area: "Opening Ceremony",
-		Return : ""
+		Return : "Welcome to GreatUniHack 2016! 24 straight hours of hacking awaits you, sponsored by great companies such as Netsol and Goldman Sachs. Make sure you find some tools to use, don't forget that code of conduct, and follow the fire exit signs... Oh, what am I saying? Prepare to duel with development, program like a pro, and create something...creative. Have fun out there!"
 	}
 	Game: {
 			"Opening Ceremony":[],
@@ -26,7 +26,7 @@ Hackerthon: {
 									"Tiredness": 3
 								},
 								Progress:1,
-								Return:"You day dream."
+								Return:"You daydream, though you begin to wonder if you should really be working..."
 							},
 							{
 								Command:"Socialise",
@@ -37,7 +37,7 @@ Hackerthon: {
 									"Tiredness": 10
 								},
 								Progress:1,
-								Return:"You walk around socialising."
+								Return:"You walk around, socialising. It's good to get to know people, especially in a crowded room like this!"
 								
 							}
 						], 
@@ -62,7 +62,7 @@ Hackerthon: {
 									"Tiredness": 3
 								},
 								Progress:1,
-								Return:"You day dream."
+								Return:"You daydream."
 							},
 							{
 								Command:"Socialise",
@@ -73,7 +73,7 @@ Hackerthon: {
 									"Tiredness": 10
 								},
 								Progress:1,
-								Return:"You walk around socialising."
+								Return:"You walk around, socialising. It's good to get to know people!"
 								
 							}
 						],
@@ -122,7 +122,8 @@ Hackerthon: {
 									"Insanity": 5,
 									"Tiredness": 3
 								},
-								Progress:1	
+								Progress:1
+								Return:"You follow the workshop. Seems like a nice distraction."
 							},
 							{
 								Command:"Chill",
@@ -132,7 +133,8 @@ Hackerthon: {
 									"Insanity": -3,
 									"Tiredness": 3
 								},
-								Progress:1	
+								Progress:1
+								Return:"You use the workshop as an excuse to relax. Not good..."
 							},
 							{
 								Command:"Socialise",
@@ -142,7 +144,8 @@ Hackerthon: {
 									"Insanity": -10,
 									"Tiredness": 10
 								},
-								Progress:1	
+								Progress:1
+								Return:"You chat to the person next to you."
 							}
 						],
 			"Toilets":[
@@ -155,7 +158,7 @@ Hackerthon: {
 									"Tiredness": 3
 								},
 								Progress:1,
-								Return:"You work to complete your project."
+								Return:"You work to complete your project...in the toilets. Are the hacking areas really that bad?!"
 							},
 							{
 								Command:"Chill",
@@ -166,7 +169,7 @@ Hackerthon: {
 									"Tiredness": 3
 								},
 								Progress:1,
-								Return:"You day dream."
+								Return:"You daydream on the loo. I guess it makes it a notch more productive."
 							},
 							{
 								Command:"Socialise",
@@ -177,7 +180,7 @@ Hackerthon: {
 									"Tiredness": 10
 								},
 								Progress:1,
-								Return:"You walk around socialising."
+								Return:"You talk to whoever's on the other side of the door. How strange."
 								
 							}
 						],
