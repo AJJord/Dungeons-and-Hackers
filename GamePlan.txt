@@ -1,0 +1,25 @@
+Base Game Stats:
+Completion
+	increased by- working
+	decreased by- random events/meters getting full
+
+Hunger
+	increased by- any activity other than eating
+	decreased by- eating
+
+Thirst
+	increased by- everything but drinking
+	decreased by- drinking
+
+Insanity
+	increased by- spending time in the work area(noisy areas in general)
+	decreased by-
+
+Tiredness
+	increased by- everything but sleeping
+	decreased by- sleeping
+
+classes:
+	per game basis
+
+Random Events
