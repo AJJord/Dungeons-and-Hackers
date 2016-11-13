@@ -4,40 +4,44 @@
     <meta charset="utf-8">
     <title>Dungeons and Hackers</title>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="ptty.jquery.js"></script>
+    <script>
 
     // Wait for the page to load first
-    window.onload = function() {
+    $(document).ready(function(){
+      var homeContent = $('main #homeContent');
+      var signUpContent = $('main #signUpContent');
 
-      //Get a reference to the link on the page
-      // with an id of "mylink"
-      var a = document.getElementById("signUp");
-      a.onclick = function() {
-        document.getElementById("signUpContent").style.display="block";
-        document.getElementById("homeContent").style.display="none";
+      $('#navBar ul #home').click(function () {
+        console.log("showhomecontent executed");
+        $(signUpContent).hide();
+        $(homeContent).slideDown();
         return false;
-      }
+      });
 
-      var b = document.getElementById("home");
-      b.onclick = function() {
-        document.getElementById("homeContent").style.display="block";
-        document.getElementById("signUpContent").style.display="none";
+      $('#navBar ul #signUp').click(function () {
+        console.log("showsignup executed");
+        $(signUpContent).slideDown();
+        $(homeContent).hide();
         return false;
-      }
-    }
-</script>
+      });
+    });
+    </script>
   </head>
   <body>
       <header>
         <h1>Dungeons</h1>
-        <h1>& <span>Hackers</span></h1>
+        <h1>&amp; <span>Hackers</span></h1>
       </header>
-      <nav>
+      <nav id="navBar">
         <p>$ [guest@greatunihack2016] >></p>
         <ul>
           <li><a href="#" id="home">Play</a></li>
           <li><a href="#" id="signUp">Sign Up</a></li>
         </ul>
+
+      </nav>
       <main>
         <h2>You are your own worst enemy.</h2>
         <div id="homeContent">
@@ -53,12 +57,58 @@
           </p>
         </div>
         <div id="signUpContent" style="display: none;">
+          <div id="terminal"></div>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+          <script src="ptty.jquery.js"></script>
+          <script>
+          $(document).ready(function(){
+            var $ptty = $('#terminal').Ptty();
+
+            $ptty.register('command', {
+              name: 'signup',
+              method: function(cmd){
+                if( cmd[1] && /(.+)@(.+){2,}\.(.+){2,}/.test(cmd[1]) ){
+                    cmd.data = { email : cmd[1] }
+                    cmd.out  =  'Success! Check your inbox.';
+                }
+                else if(cmd[1]){
+                    $ptty.set_command_option({
+                        next : 'signup %cmd%',
+                        ps : 'email? ',
+                        out : 'Try again. Or exit with escape key.'
+                    });
+                    cmd = false;
+                }
+                else{
+                    $ptty.set_command_option({
+                        out : 'Usage: signup email@example.com'
+                    });
+                    cmd = false;
+                }
+                return cmd;
+              },
+              options: [1], /*[]*/
+              help: 'Stores email'
+            });
+
+            //var cmd_signup = {
+            //    name: 'signup',
+            //    method: '/ptty/',
+            //    options : [1],
+            //    help: 'Register by email.'
+            //};
+            $ptty.register('command', cmd_signup);
+
+          });
+          </script>
+        </div>
+<!--
           <form class="" action="index.html" method="post">
             <label for="username">Username</label><input type="text" name="username" value="">
             <label for="password">Password</label><input type="password" name="password" value="">
             <button type="button" name="submit">Submit</button>
           </form>
-        </div>
+-->
       </main>
       <footer>&copy; 2016, The Watch-men. <a href="http://github.com/BlooMaan">Alex</a>, <a href="http://github.com/undying-fish">Simon</a></footer>
   </body>
