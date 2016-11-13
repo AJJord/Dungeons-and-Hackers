@@ -36,7 +36,7 @@ $params = [
 try {
     $result = $dynamodb->getItem($params);
 
-		json_encode(array(
+		echo json_encode(array(
 			userExists => (boolean)$result,
 			data => json_decode($result["Item"]["Store"]["S"], true)
 		));
