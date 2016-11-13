@@ -12,11 +12,13 @@
     $(document).ready(function(){
       var homeContent = $('main #homeContent');
       var signUpContent = $('main #signUpContent');
+      var gameStatContent = $('main #gameStatContent');
 
       $('#navBar ul #home').click(function () {
         console.log("showhomecontent executed");
         $(signUpContent).hide();
         $(homeContent).slideDown();
+        $(gameStatContent).hide();
         return false;
       });
 
@@ -24,6 +26,15 @@
         console.log("showsignup executed");
         $(signUpContent).slideDown();
         $(homeContent).hide();
+        $(gameStatContent).hide();
+        return false;
+      });
+
+      $('#navBar ul #gameStat').click(function () {
+        console.log("showgamestat executed");
+        $(signUpContent).hide();
+        $(homeContent).hide();
+        $(gameStatContent).slideDown();
         return false;
       });
     });
@@ -31,14 +42,15 @@
   </head>
   <body>
       <header>
-        <h1>Dungeons</h1>
-        <h1>&amp; <span>Hackers</span></h1>
+        <h1><a href="#" id="home">Dungeons</a></h1>
+        <h1><a href="#" id="home">&amp; <span>Hackers</span></a></h1>
       </header>
       <nav id="navBar">
         <p class="username">guest</p>
         <ul>
           <li><a href="#" id="home">Play</a></li>
           <li><a href="#" id="signUp">Sign Up</a></li>
+          <li><a href="#" id="gameStat">Game Stats</a></li>
         </ul>
 
       </nav>
@@ -135,8 +147,17 @@
           });
           </script>
         </div>
-        <div id="gameStatContent">
-
+        <div id="gameStatContent" style="display: none;">
+          <p>Insanity</p>
+          <progress max="100" value="80"></progress>
+          <p>Tiredness</p>
+          <progress max="100" value="80"></progress>
+          <p>Progess</p>
+          <progress max="100" value="80"></progress>
+          <p>Time</p>
+          <progress max="100" value="80"></progress>
+          <p>Bladder</p>
+          <progress max="100" value="80"></progress>
         </div>
 
 
