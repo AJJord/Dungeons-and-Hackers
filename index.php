@@ -78,7 +78,7 @@
                     cmd.data = { email : cmd[1] }
                     login = cmd[1];
                     console.log(login);
-                    cmd.out  =  'Success!';
+                    cmd.out  =  'Use the password command to complete registration.';
                     $("p.username").html(login);
                 }
                 else if(cmd[1]){
@@ -106,11 +106,21 @@
                 method: function(cmd){
 
                   if(cmd[1]){
-                      cmd.data = { email : cmd[1] }
-                      cmd.out  =  'Password stored.';
-                      password = cmd[1];
-                      console.log(login);
-                      console.log(password);
+                      if(typeof login !== 'undefined'){
+                        cmd.data = { email : cmd[1] }
+                        $ptty.set_command_option({
+                            out : 'Password stored.'
+                        });
+                        password = cmd[1];
+                        console.log(login);
+                        console.log(password);
+                      }
+                      else {
+                        $ptty.set_command_option({
+                            out : 'Use signup first.'
+                        });
+                        cmd = false;
+                      }
                   }
 
                 },
