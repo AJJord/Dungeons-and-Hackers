@@ -27,7 +27,7 @@ var Games =
 			],
 			"hacking area 1": [
 				{
-					Command: "work",
+					Command: "working",
 					StatChange:
 					{
 						"hunger": 5,
@@ -41,7 +41,7 @@ var Games =
 					Return: "You work to complete your project."
 				},
 				{
-					Command: "chill",
+					Command: "chilling",
 					StatChange:
 					{
 						"hunger": 5,
@@ -55,7 +55,7 @@ var Games =
 					Return: "You day dream."
 				},
 				{
-					Command: "socialise",
+					Command: "socialising",
 					StatChange:
 					{
 						"hunger": 5,
@@ -72,7 +72,7 @@ var Games =
 			],
 			"hacking area 2": [
 				{
-					Command: "Work",
+					Command: "working",
 					StatChange:
 					{
 						"hunger": 5,
@@ -88,7 +88,7 @@ var Games =
 			],
 			"canteen": [
 				{
-					Command: "eat",
+					Command: "eating",
 					StatChange:
 					{
 						"hunger": -50,
@@ -102,7 +102,7 @@ var Games =
 					Return: "You eat some delicious food."
 				},
 				{
-					Command: "drink",
+					Command: "drinking",
 					StatChange:
 					{
 						"hunger": 5,
@@ -118,7 +118,7 @@ var Games =
 			],
 			"workshop": [
 				{
-					Command: "sleep",
+					Command: "sleeping",
 					StatChange:
 					{
 						"hunger": 10,
@@ -134,7 +134,7 @@ var Games =
 			],
 			"hall": [
 				{
-					Command: "work",
+					Command: "working",
 					StatChange:
 					{
 						"hunger": 5,
@@ -148,7 +148,7 @@ var Games =
 					Return: "You work to complete your project."
 				},
 				{
-					Command: "socialise",
+					Command: "socialising",
 					StatChange:
 					{
 						"Hunger": 5,
@@ -164,7 +164,7 @@ var Games =
 			],
 			"toilet": [
 				{
-					Command: "use bladder",
+					Command: "on the toilet",
 					StatChange:
 					{
 						"hunger": 5,
@@ -175,14 +175,14 @@ var Games =
 						"progress": 1,
 						"time": 0
 					},
-					Return: "You work to complete your project."
+					Return: "You working to complete your project."
 				}
 			],
 		},
 		Stats: {
-			Hunger:0,
+			hunger:0,
 			insanity: 0,
-			Thirst:0,
+			thirst:0,
 			bladder:0,
 			tiredness:0,
 			progress: 0,
