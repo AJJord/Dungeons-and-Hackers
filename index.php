@@ -64,97 +64,52 @@
           $(document).ready(function(){
             var $ptty = $('#terminal').Ptty();
 
-            var cbf_login = {
-            name: 'login',
-            method: function(cmd){
-                var opts, $input = $ptty.get_terminal('.prompt .input');
-
-                if(cmd[1] && cmd[2]){
-                    opts = {
-                        out : 'Identifying...',
-                        last : 'xxxxxxxxxx',
-                        data : { usr : cmd[1], psw : $input.text() }
-                    };
-                    $input
-                        .text('xxxxxxxxxx')
-                        .css({'visibility' : 'visible'});
-                }else if(cmd[1]){
-                    opts = {
-                        out  : 'Password?',
-                        next : 'login '+cmd[1]+' %cmd%',
-                    };
-
-                    $input.css({'visibility' : 'hidden'});
-                    $(document).on('keydown.escape', function( e ) {
-                        if(e.which == 27){ // escape key exits command
-                            $input.css({'visibility' : 'visible'});
-                            $( this ).unbind( e );
-                        }
+            $ptty.register('command', {
+              name: 'signup',
+              method: function(cmd){
+                if( cmd[1] && /(.+)@(.+){2,}\.(.+){2,}/.test(cmd[1]) ){
+                    cmd.data = { email : cmd[1] }
+                    cmd.out  =  'Success! Check your inbox.';
+                }
+                else if(cmd[1]){
+                    $ptty.set_command_option({
+                        next : 'signup %cmd%',
+                        ps : 'email? ',
+                        out : 'Try again. Or exit with escape key.'
                     });
-
-                    cmd = false;
-                }else{
-                    opts = {
-                        out  : 'Username?',
-                        ps   : 'usr: ',
-                        next : 'login %cmd%',
-                    };
                     cmd = false;
                 }
-
-                $ptty.set_command_option(opts);
-
+                else{
+                    $ptty.set_command_option({
+                        out : 'Usage: signup email@example.com'
+                    });
+                    cmd = false;
+                }
                 return cmd;
-            }
-};
-$ptty.register('callbefore', cbf_login );
+              },
+              options: [1], /*[]*/
+              help: 'Stores email'
+            });
 
-var cmd_login = {
-    name: 'login',
-    method: '/ptty/',
-    options : [1,2],
-    help: 'Login command. Usage: login [username] [password]'
-};
-$ptty.register('command', cmd_login);
+            var cmd_signup = {
+                name: 'password',
+                method: function(cmd){
 
+                  if(cmd[1]){
+                      cmd.data = { email : cmd[1] }
+                      cmd.out  =  'Password stored.';
+                  }
 
-var cbk_login =  {
-    name : 'login',
-    method : function(cmd){
-        if(cmd.data && cmd.data.is_loggedin && cmd.data.is_loggedin === true){
-            // remove these commands using a response
-            cmd.rsp_batch_unregister = ['login', 'signup'];
-            $ptty.register('command', cmd_logout);
-            $ptty.register('callback', cbk_logout);
-        }
-        return cmd;
-    }
-};
-$ptty.register('callback', cbk_login);
+                },
+                options : [1],
+                help: 'Register password.'
+            };
+            $ptty.register('command', cmd_signup);
 
 
-var rsp_batch_unregister = {
-    name : 'rsp_batch_unregister',
-    method : function(cmd){
-        // commands to remove
-        var cmd_names = cmd.rsp_batch_unregister;
 
-        // from these stacks
-        var stacks = ['callbefore', 'command', 'callback'];
-        for (var i = 0; i < stacks.length; i++) {
-            for (var n = 0; n < cmd_names.length; n++) {
-                $ptty.unregister(stacks[i], cmd_names[n]);
-            }
-        }
 
-        // Always delete your response property if you
-        // don't want it to fire in unexpected places.
-        delete(cmd.rsp_batch_unregister);
-
-        return cmd;
-    }
-};
-$ptty.register('response', rsp_batch_unregister);
+          });
           </script>
         </div>
 <!--
