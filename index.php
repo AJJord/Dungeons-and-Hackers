@@ -8,7 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="ptty.jquery.js"></script>
     <script>
-
     // Wait for the page to load first
     $(document).ready(function(){
       var homeContent = $('main #homeContent');
@@ -36,7 +35,7 @@
         <h1>&amp; <span>Hackers</span></h1>
       </header>
       <nav id="navBar">
-        <p>$ [guest@greatunihack2016] >></p>
+        <p class="username">guest</p>
         <ul>
           <li><a href="#" id="home">Play</a></li>
           <li><a href="#" id="signUp">Sign Up</a></li>
@@ -44,8 +43,8 @@
 
       </nav>
       <main>
-        <h2>You are your own worst enemy.</h2>
         <div id="homeContent">
+        <h2>You are your own worst enemy.</h2>
           <p>
             Fighting to stay awake and enjoying what you're doing are two
             different things.<br>Or are they?<br>
@@ -58,31 +57,41 @@
           </p>
         </div>
         <div id="signUpContent" style="display: none;">
+        <h2>Who are you?</h2>
           <div id="terminal"></div>
           <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
           <script src="ptty.jquery.js"></script>
           <script>
+          var login;
+          var password;
           $(document).ready(function(){
-            var $ptty = $('#terminal').Ptty({ theme : 'fallout' });
+            var $ptty = $('#terminal').Ptty({ theme : 'fallout', i18n : {
+        welcome : 'GreatUniHack2016 Simulator',
+        error_not_found : 'Our search geese flocked up somewhere.'
+    } });
 
             $ptty.register('command', {
               name: 'signup',
               method: function(cmd){
-                if( cmd[1] && /(.+)@(.+){2,}\.(.+){2,}/.test(cmd[1]) ){
+                console.log(cmd);
+                if( cmd[1] && /^[a-zA-Z_\-]+$/.test(cmd[1]) ){
                     cmd.data = { email : cmd[1] }
-                    cmd.out  =  'Success! Check your inbox.';
+                    login = cmd[1];
+                    console.log(login);
+                    cmd.out  =  'Success!';
+                    $("p.username").html(login);
                 }
                 else if(cmd[1]){
                     $ptty.set_command_option({
                         next : 'signup %cmd%',
-                        ps : 'email? ',
+                        ps : 'username? ',
                         out : 'Try again. Or exit with escape key.'
                     });
                     cmd = false;
                 }
                 else{
                     $ptty.set_command_option({
-                        out : 'Usage: signup email@example.com'
+                        out : 'Usage: signup username. Spaces not accepted.'
                     });
                     cmd = false;
                 }
@@ -99,6 +108,9 @@
                   if(cmd[1]){
                       cmd.data = { email : cmd[1] }
                       cmd.out  =  'Password stored.';
+                      password = cmd[1];
+                      console.log(login);
+                      console.log(password);
                   }
 
                 },
@@ -113,6 +125,12 @@
           });
           </script>
         </div>
+        <div id="gameStatContent">
+
+        </div>
+
+
+
 <!--
           <form class="" action="index.html" method="post">
             <label for="username">Username</label><input type="text" name="username" value="">
@@ -121,6 +139,6 @@
           </form>
 -->
       </main>
-      <footer>&copy; 2016, The Watch-men. <a href="http://github.com/BlooMaan">Alex</a>, <a href="http://github.com/undying-fish">Simon</a></footer>
+      <footer>&copy; 2016, The Watch-men. <a href="http://github.com/BlooMaan">Alex</a>, <a href="http://github.com/undying-fish">Simon</a>, <a href="https://github.com/WilliamStott">Will</a>, Michael</footer>
   </body>
 </html>
