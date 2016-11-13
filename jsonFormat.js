@@ -7,7 +7,7 @@ var Games =
 			Area: "Opening Ceremony",
 			Return: "Test"
 		},
-		Game:
+		Areas:
 		{
 			"Opening Ceremony": [],
 			"Hacking Area 1": [
@@ -232,25 +232,12 @@ var Games =
 				}
 			]
 		},
-		Stats: [
-			{
-				Name: "Hunger",
-				Val: 0
-			},
-			{
-				Name: "Thirst",
-				Val: 0
-			},
-			{
-				Name: "Insanity",
-				Val: 0
-			},
-			{
-				Name: "Tiredness",
-				Val: 0
-			}
-
-		],
+		Stats: {
+			Hunger:0,
+			Insanity: 0,
+			Thirst:0,
+			Tiredness:0
+		},
 		Classes: [
 			{
 				Name: "Newbie",
