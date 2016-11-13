@@ -48,9 +48,8 @@
       <nav id="navBar">
         <p class="username">guest</p>
         <ul>
-          <li><a href="#" id="home">Play</a></li>
+          <li><a href="#" id="home">About</a></li>
           <li><a href="#" id="signUp">Sign Up</a></li>
-          <li><a href="#" id="gameStat">Game Stats</a></li>
         </ul>
 
       </nav>
@@ -90,7 +89,7 @@
                     cmd.data = { email : cmd[1] }
                     login = cmd[1];
                     console.log(login);
-                    cmd.out  =  'Use the password command to complete registration.';
+                    cmd.out  =  'Use the play command to access game stats.';
                     $("p.username").html(login);
                 }
                 else if(cmd[1]){
@@ -113,19 +112,18 @@
               help: 'Stores email'
             });
 
-            var cmd_signup = {
-                name: 'password',
+            var cmd_play = {
+                name: 'play',
                 method: function(cmd){
 
                   if(cmd[1]){
-                      if(typeof login !== 'undefined'){
-                        cmd.data = { email : cmd[1] }
+                      if(/*cmd[1] in database*/true){
                         $ptty.set_command_option({
-                            out : 'Password stored.'
+                            out : 'Logged in. Accessing...'
                         });
-                        password = cmd[1];
-                        console.log(login);
-                        console.log(password);
+                        $("main #signUpContent").hide();
+                        $("main #homeContent").hide();
+                        $("main #gameStatContent").slideDown();
                       }
                       else {
                         $ptty.set_command_option({
@@ -137,9 +135,9 @@
 
                 },
                 options : [1],
-                help: 'Register password.'
+                help: 'Access game stats with username.'
             };
-            $ptty.register('command', cmd_signup);
+            $ptty.register('command', cmd_play);
 
 
 
