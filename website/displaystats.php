@@ -10,8 +10,8 @@ $sdk = new Aws\Sdk([
     'region'   => 'eu-west-1',
     'version'  => 'latest',
 		'credentials' => [
-        'key'    => 'AKIAIJT2IKOY2U3IDR5A',
-        'secret' => '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',
+        'key'    => 'AWS-KEY',
+        'secret' => 'AWS-SECRET',
     ],
 ]);
 
