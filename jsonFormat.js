@@ -4,59 +4,67 @@ var Games =
 	{
 		Start:
 		{
-			Area: "Opening Ceremony",
+			Area: "opening ceremony",
 			Return: "Test"
 		},
 		Areas:
 		{
-			"Opening Ceremony": [
+			"opening ceremony": [
 				{
-					Command: "Pay Attention",
+					Command: "pay attention",
 					StatChange:
 					{
-						"Hunger": 2,
-						"Thirst": 4,
-						"Insanity": 2,
-						"Tiredness": 1,
-						"Progress": 5
+						"hunger": 2,
+						"thirst": 4,
+						"bladder": 7,
+						"insanity": 2,
+						"tiredness": 1,
+						"progress": 5,
+						"time": 1
 					},
 					Return: "You pay attention to the opening ceremony."
 				},
 			],
-			"Hacking Area 1": [
+			"hacking area 1": [
 				{
-					Command: "Work",
+					Command: "work",
 					StatChange:
 					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": 5,
-						"Tiredness": 3,
-						"Progress": 1
+						"hunger": 5,
+						"thirst": 10,
+						"bladder": 7,
+						"insanity": 5,
+						"tiredness": 3,
+						"progress": 3,
+						"time": 1
 					},
 					Return: "You work to complete your project."
 				},
 				{
-					Command: "Chill",
+					Command: "chill",
 					StatChange:
 					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -3,
-						"Tiredness": 3,
-						"Progress": 1
+						"hunger": 5,
+						"thirst": 10,
+						"bladder": 7,
+						"insanity": -20,
+						"tiredness": 3,
+						"progress": 1,
+						"time": 1
 					},
 					Return: "You day dream."
 				},
 				{
-					Command: "Socialise",
+					Command: "socialise",
 					StatChange:
 					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -10,
-						"Tiredness": 10,
-						"Progress": 1
+						"hunger": 5,
+						"thirst": 10,
+						"bladder": 7,
+						"insanity": -10,
+						"tiredness": 10,
+						"progress": 1,
+						"time": 1
 					},
 					Return: "You walk around socialising."
 
@@ -67,219 +75,118 @@ var Games =
 					Command: "Work",
 					StatChange:
 					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": 5,
-						"Tiredness": 3,
-						"Progress": 1
+						"hunger": 5,
+						"thirst": 10,
+						"bladder": 7,
+						"insanity": 5,
+						"tiredness": 3,
+						"progress": 1,
+						"time": 1
+					},
+					Return: "You work to complete your project."
+				}
+			],
+			"Canteen": [
+				{
+					Command: "Eat",
+					StatChange:
+					{
+						"hunger": -50,
+						"thirst": 3,
+						"bladder": 7,
+						"insanity": 0,
+						"tiredness": 5,
+						"progress": 0,
+						"time": 1
+					},
+					Return: "You eat some delicious food."
+				},
+				{
+					Command: "drink",
+					StatChange:
+					{
+						"hunger": 5,
+						"thirst": -50,
+						"bladder": 7,
+						"insanity": 0,
+						"tiredness": 2,
+						"progress": 0,
+						"time": 1
+					},
+					Return: "You drink a beverage."
+				},
+			],
+			"workshop": [
+				{
+					Command: "sleep",
+					StatChange:
+					{
+						"hunger": 10,
+						"thirst": 10,
+						"bladder": 10,
+						"insanity": -20,
+						"tiredness": -80,
+						"progress": 0,
+						"time": 20
+					},
+					Return: "You fall into a deep sleep."
+				},
+			],
+			"hall": [
+				{
+					Command: "work",
+					StatChange:
+					{
+						"hunger": 5,
+						"thirst": 10,
+						"bladder": 7,
+						"insanity": 5,
+						"tiredness": 3,
+						"progress": 1,
+						"time": 0
 					},
 					Return: "You work to complete your project."
 				},
 				{
-					Command: "Chill",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -3,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You day dream."
-				},
-				{
-					Command: "Socialise",
+					Command: "socialise",
 					StatChange:
 					{
 						"Hunger": 5,
 						"Thirst": 10,
 						"Insanity": -10,
+						"Bladder": 7,
 						"Tiredness": 10,
-						"Progress": 1
+						"Progress": 1,
+						"Time": 0
 					},
 					Return: "You walk around socialising."
-
 				}
 			],
-			"Hall": [
+			"toilet": [
 				{
-					Command: "Work",
+					Command: "Use Bladder",
 					StatChange:
 					{
 						"Hunger": 5,
-						"Thirst": 10,
+						"Thirst": 5,
+						"Bladder": -100,
 						"Insanity": 5,
 						"Tiredness": 3,
-						"Progress": 1
+						"Progress": 1,
+						"Time": 0
 					},
 					Return: "You work to complete your project."
-				},
-				{
-					Command: "Chill",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -3,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You day dream."
-				},
-				{
-					Command: "Socialise",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -10,
-						"Tiredness": 10,
-						"Progress": 1
-					},
-					Return: "You walk around socialising."
-
 				}
 			],
-			"Workshop": [
-				{
-					Command: "Work",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": 5,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You work to complete your project."
-				},
-				{
-					Command: "Chill",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -3,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You day dream."
-				},
-				{
-					Command: "Socialise",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -10,
-						"Tiredness": 10,
-						"Progress": 1
-					},
-					Return: "You walk around socialising."
-
-				}
-			],
-			"Toilets": [
-				{
-					Command: "Work",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": 5,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You work to complete your project."
-				},
-				{
-					Command: "Chill",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -3,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You day dream."
-				},
-				{
-					Command: "Socialise",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -10,
-						"Tiredness": 10,
-						"Progress": 1
-					},
-					Return: "You walk around socialising."
-
-				}
-			],
-			"Kill House": [
-				{
-					Command: "Escape",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -50,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You work to complete your project."
-				},
-				{
-					Command: "Die",
-					StatChange:
-					{
-						"Hunger": 5,
-						"Thirst": 10,
-						"Insanity": -3,
-						"Tiredness": 3,
-						"Progress": 1
-					},
-					Return: "You day dream."
-				}
-			]
 		},
 		Stats: {
 			Hunger:0,
 			Insanity: 0,
 			Thirst:0,
+			Bladder:0,
 			Tiredness:0,
-			Progress: 0
+			Progress: 0,
+			Time:0
 		},
-		Classes: [
-			{
-				Name: "Newbie",
-				StatMultiplier: 10
-			},
-			{
-				Name: "Nerd",
-				StatMultiplier: 0
-			},
-			{
-				Name: "Hacker",
-				StatMultiplier: -10
-			}
-		],
-		RandomEvents: [
-			{
-				Name: "Heart Attack",
-				Chance: 0.01
-			},
-			{
-				Name: "Code bug",
-				Chance: 10
-			},
-			{
-				Name: "Hardware Failure",
-				Chance: 1
-			},
-		],
-		Progress: 0
 	}
 }
