@@ -37,6 +37,10 @@ h1 span {
   font-size: normal;
 }
 
+header {
+  margin-bottom: -30px;
+}
+
 li {
   list-style-type: none;
   display: inline;
@@ -55,4 +59,10 @@ li a {
 li a:hover {
     border: 5px solid green;
     padding: 2px;
+}
+
+main {
+  border: 3px dashed green;
+  padding: 20px;
+  margin: 0 0 10px 0;
 }
