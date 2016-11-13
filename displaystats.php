@@ -20,7 +20,7 @@ $marshaler = new Marshaler();
 
 $tableName = 'UserData';
 
-$username = 'player1';
+$username = $_GET["username"];
 
 $key = $marshaler->marshalJson('
     {
@@ -35,9 +35,15 @@ $params = [
 
 try {
     $result = $dynamodb->getItem($params);
-    $storedData = json_decode($result["Item"]["Store"]["S"]);
-		$stats = $storedData["stats"];
-		print_r($stats);
+
+		json_encode(array(
+			userExists => (boolean)$result,
+			data => json_decode($result["Item"]["Store"]["S"], true)
+		));
+    //$storedData = json_decode($result["Item"]["Store"]["S"]);
+		//$stats = $storedData["stats"];
+		//echo $storedData->Game;
+		// echo $result["Item"]["Store"]["S"];
 
 } catch (DynamoDbException $e) {
     echo "Unable to get item:\n";
