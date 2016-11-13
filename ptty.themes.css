@@ -1,0 +1,29 @@
+/* fallout theme */
+.fallout {
+    background: rgba(91,107,77,1);
+    /* All the single browsers */
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg=='), -moz-radial-gradient(center, ellipse cover, rgba(91,107,77,1) 0%, rgba(23,28,18,1) 100%) no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg=='), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(91,107,77,1)), color-stop(100%, rgba(23,28,18,1)));
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg=='), -webkit-radial-gradient(center, ellipse cover, rgba(91,107,77,1) 0%, rgba(23,28,18,1) 100%) no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg=='), -o-radial-gradient(center, ellipse cover, rgba(91,107,77,1) 0%, rgba(23,28,18,1) 100%) no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg=='), -ms-radial-gradient(center, ellipse cover, rgba(91,107,77,1) 0%, rgba(23,28,18,1) 100%) no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg=='), radial-gradient(ellipse at center, rgba(91,107,77,1) 0%, rgba(23,28,18,1) 100%) no-repeat;
+}
+
+.fallout .content { padding: 15px 15px 0 15px; }
+.fallout .prompt { padding: 0 15px 15px 15px; }
+.fallout .content, .fallout .prompt,
+.fallout .prompt .input,
+.fallout .prompt .input::before {
+    color: transparent; text-shadow: 0 0 0 #90d690; /* Hack to hide the real caret */
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: VT323, monospace, "Lucida Console", Monaco;
+    letter-spacing: 1px;
+}
+.fallout .prompt .input.show-caret{ color: #90d690; opacity: .85; }
+.fallout .prompt .input::after { font-size: 22px; }
+.fallout .loading::after { content: "⚙"; color: #ddd; font-size: 10em; border-radius: 10em; opacity: 0.4; }
+.fallout .content ul { margin: 0; }
+.fallout .content ul li { list-style-type: none; }
