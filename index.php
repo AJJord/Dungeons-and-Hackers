@@ -49,7 +49,7 @@
         <p class="username">guest</p>
         <ul>
           <li><a href="#" id="home">About</a></li>
-          <li><a href="#" id="signUp">Sign Up</a></li>
+          <li><a href="#" id="signUp">Sign Up/Play</a></li>
         </ul>
 
       </nav>
