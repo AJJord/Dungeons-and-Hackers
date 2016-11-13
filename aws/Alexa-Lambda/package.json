@@ -1,0 +1,27 @@
+{
+  "name": "node-lambda-template",
+  "version": "0.0.1",
+  "description": "Retro Text Game Engine brought to Amazon Alexa.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rebelmail/node-lambda-template.git"
+  },
+  "author": "motdotla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebelmail/node-lambda-template/issues"
+  },
+  "homepage": "https://github.com/rebelmail/node-lambda-template",
+  "dependencies": {
+    "alexa-app": "^2.3.4",
+    "aws-sdk": "^2.7.0",
+    "dynamodb": "^0.3.6",
+    "node-lambda": "0.1.5"
+  },
+  "scripts": {
+    "setup": "node-lambda setup",
+    "run": "node-lambda run",
+    "deploy": "node-lambda deploy"
+  }
+}
