@@ -49,7 +49,7 @@
         <p class="username">guest</p>
         <ul>
           <li><a href="#" id="home">About</a></li>
-          <li><a href="#" id="signUp">Sign Up/Play</a></li>
+          <li><a href="#" id="signUp">Sign Up</a></li>
         </ul>
 
       </nav>
@@ -117,13 +117,17 @@
                 method: function(cmd){
 
                   if(cmd[1]){
-                      if(/*cmd[1] in database*/true){
+
+		      $.get('displaystats.php?username='+ cmd[1]).done(function (res) {
+
+			if(res.userExists){
                         $ptty.set_command_option({
                             out : 'Logged in. Accessing...'
                         });
                         $("main #signUpContent").hide();
                         $("main #homeContent").hide();
                         $("main #gameStatContent").slideDown();
+                        console.log(data);
                       }
                       else {
                         $ptty.set_command_option({
@@ -131,6 +135,10 @@
                         });
                         cmd = false;
                       }
+
+
+		      });
+
                   }
 
                 },
