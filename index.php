@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Dungeons and Hackers</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="ptty.themes.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="ptty.jquery.js"></script>
     <script>
@@ -62,7 +63,7 @@
           <script src="ptty.jquery.js"></script>
           <script>
           $(document).ready(function(){
-            var $ptty = $('#terminal').Ptty();
+            var $ptty = $('#terminal').Ptty({ theme : 'fallout' });
 
             $ptty.register('command', {
               name: 'signup',
