@@ -70,7 +70,7 @@ var Games =
 
 				}
 			],
-			"Hacking Area 2": [
+			"hacking area 2": [
 				{
 					Command: "Work",
 					StatChange:
@@ -86,9 +86,9 @@ var Games =
 					Return: "You work to complete your project."
 				}
 			],
-			"Canteen": [
+			"canteen": [
 				{
-					Command: "Eat",
+					Command: "eat",
 					StatChange:
 					{
 						"hunger": -50,
@@ -153,27 +153,27 @@ var Games =
 					{
 						"Hunger": 5,
 						"Thirst": 10,
-						"Insanity": -10,
-						"Bladder": 7,
-						"Tiredness": 10,
-						"Progress": 1,
-						"Time": 0
+						"insanity": -10,
+						"bladder": 7,
+						"tiredness": 10,
+						"progress": 1,
+						"time": 0
 					},
 					Return: "You walk around socialising."
 				}
 			],
 			"toilet": [
 				{
-					Command: "Use Bladder",
+					Command: "use bladder",
 					StatChange:
 					{
-						"Hunger": 5,
-						"Thirst": 5,
-						"Bladder": -100,
-						"Insanity": 5,
-						"Tiredness": 3,
-						"Progress": 1,
-						"Time": 0
+						"hunger": 5,
+						"thirst": 5,
+						"bladder": -100,
+						"insanity": 5,
+						"tiredness": 3,
+						"progress": 1,
+						"time": 0
 					},
 					Return: "You work to complete your project."
 				}
@@ -181,12 +181,12 @@ var Games =
 		},
 		Stats: {
 			Hunger:0,
-			Insanity: 0,
+			insanity: 0,
 			Thirst:0,
-			Bladder:0,
-			Tiredness:0,
-			Progress: 0,
-			Time:0
+			bladder:0,
+			tiredness:0,
+			progress: 0,
+			time:0
 		},
 	}
 }
